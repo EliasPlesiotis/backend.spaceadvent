@@ -1,0 +1,50 @@
+{{ define "settings" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ template "head" }}
+    <title>Document</title>
+</head>
+<body>
+    {{ template "navbar" .}}
+    <div class="container">
+        <div class="container">
+            <div class="jumbotron">
+                <form method="POST" action="/replace">
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-form-label">New Username</label> 
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="username"><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-form-label" for="email">New Email</label> 
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="email"><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-form-label">New Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="password"><br>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-1 col-form-label">Confirm New Password</label>
+                        <div class="col-sm-5">
+                            <input type="password" class="form-control" name="cpassword"><br>
+                        </div>
+                    </div>
+                    <input type="submit">
+                </form>
+                <br>
+                <p><a class="btn btn-primary btn-lg" href="/delete" role="button">Delete Account</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}

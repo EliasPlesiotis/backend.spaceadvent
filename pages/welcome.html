@@ -1,0 +1,51 @@
+{{ define "welcome" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ template "head" }}
+    <title>Document</title>
+</head>
+<body>
+    {{ template "navbar" . }}
+    <div class="container">
+        <div class="jumbotron">
+
+            <h1>Welcome {{ .Username }} </h1> 
+            <p><h2>Best Score: 0</h2></p>
+            <p><a class="btn btn-primary btn-lg" href="/logout" role="button">Logout</a></p>
+            <p><a class="btn btn-primary btn-lg" href="https://spaceadvent.glitch.me/" role="button">Play</a></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-10 col-md-12">
+              <div class="thumbnail">
+                <div class="caption">
+                  <h2>SpaceAdvent</h2>
+                  <p style="font-size: large;">
+                     SpaceAdvent, is an online game.Gather bullets, avoid rocks, shoot aliens and don't get caught
+                     to the gravitational field of black holes.
+                     Distinctio sed sunt aliquid pariatur numquam consequuntur expedita excepturi doloremque totam, 
+                     esse, labore facere rem itaque dicta explicabo et quam assumenda temporibus soluta nobis neque 
+                     reiciendis dolorem! Quia, voluptates eveniet ad tempora, ipsa quibusdam temporibus eligendi, 
+                     aspernatur earum dolores qui alias obcaecati officiis natus blanditiis accusamus quidem? 
+                     Saepe doloribus recusandae nobis magni animi explicabo deserunt voluptatum quis cum molestias 
+                     consectetur sequi sed, ex nisi facere expedita maxime accusamus? Molestiae amet voluptates officia 
+                     ut libero ex adipisci in dolorem doloremque, sed cupiditate provident ratione praesentium voluptatum 
+                     quos, nostrum est. Odit mollitia voluptates quidem sapiente! Obcaecati optio excepturi id quibusdam 
+                     praesentium, consequuntur quisquam, quaerat ab dolorem veritatis, in illo. Quam fugit sunt atque 
+                     accusantium dignissimos! Vero quis impedit repellendus error veritatis quisquam ducimus, delectus 
+                     molestiae.
+                  </p>
+                  <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</body>
+</html>
+{{ end }}

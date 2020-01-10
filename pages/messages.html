@@ -1,0 +1,40 @@
+{{ define "messages" }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{ template "head" }}
+    <title>Document</title>
+</head>
+<body>
+    {{ template "navbar" . }}
+    <div class="container block">
+        <h2>Kuiper</h2>
+        <div class="jumbotron overflow-scroll" style="background-color: rgb(210, 210, 218);">
+            {{ range .Messages }}
+                <br>
+                {{ if not .Mine }}
+                    <span class="badge" style="background-color: rgb(236, 40, 40);"><h4>{{ .Text }}</h4></span><br>
+                {{ else }}
+                    <span class="badge pull-right" style="background-color: rgb(47, 47, 255);"><h4>{{ .Text }}</h4></span><br>
+                {{ end }}
+                <br>
+            {{ end }}
+        </div>
+    </div>
+    <div class="container" style="margin-bottom: 5%;">
+        <div class="input-group input-group-lg" style="width: 100%;">
+            <form method="POST" action="/sent">
+                <div class="input-group input-group-lg">
+                    <input type="text" class="form-control" placeholder="Write to Kuiper..." aria-describedby="basic-addon1" name="msg">
+                    <span class="input-group-addon glyphicon glyphicon-send" id="sizing-addon1"><button type="submit" style="visibility:hidden;"></button></span>
+                </div>
+            </form>
+            <p><a class="btn btn-primary btn-lg" href="/resetmsg" role="button">Delete Messages</a></p>
+        </div>
+    </div>
+</body>
+</html>
+{{ end }}
